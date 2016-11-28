@@ -9,19 +9,56 @@
       width: 200px;
       margin-top: 230px;
       cursor: pointer;
+      right: 0px
     }
 
     img.flip {
       -webkit-transform: scaleX(-1);
       transform: scaleX(-1);
     }
+  img {
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-name: example;
+      -webkit-animation-duration: 5s;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-delay: 2s;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;
+      /* Standard syntax */
+      animation-name: example;
+      animation-duration: 5s;
+      animation-timing-function: linear;
+      animation-delay: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+  }
+/* Safari 4.0 - 8.0 */
+  @-webkit-keyframes example {
+      0%   {right:0%; top:0px;}
+      25%  {right:25%; top:0px;}
+      50%  {right:50%;}
+      75%  {right:75%;}
+      95% {right:100%;}
+  }
+
+  @keyframes example {
+      0%   {right:0%;}
+      25%  {right:25%;}
+      50%  {right:50%;}
+      75%  {right:75%;}
+      95% {right:100%;-webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+      }
+  }
+
+  /* Standard syntax */
   </style>
 </head>
 <body>
   
   <img id="walker" src="http://media.giphy.com/media/XGnWMiVXL87Xa/giphy.gif">
 
-  <script src="walker.js"></script>
+  <!--  <script src="walker.js"></script> -->
   
 </body>
 </html>
